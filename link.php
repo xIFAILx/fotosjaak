@@ -13,6 +13,9 @@
 							<a href='./index.php?content=download'>download game</a>
 						  </li>
 						  <li>
+						  <a href='./index.php?content=class/MySqlDatabaseClass'>db-class test</a>
+						  </li>
+						  <li>
 							<a href='./index.php?content=faqpage'>FAQ game</a>
 						  </li>";
 				break;
@@ -40,7 +43,10 @@
 				  </li>
 				  <li>
 					<a href='./index.php?content=login'>log in</a>
-				  </li>";
+				  </li>
+				  <li>
+						  <a href='./index.php?content=class/MySqlDatabaseClass'>db-class test</a>
+						  </li>";
 		}
 	?>
 </ul>
