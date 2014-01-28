@@ -25,10 +25,11 @@ div#container
 
 div#banner
 {
-	background-image:url("../images/fotojaak-banner.png");
+	background-image:url("../images/banner.jpg");
 	background-repeat:no-repeat;
 	background-color:orange;
 	height:170px;
+	width:745px;
 	border-radius:25px;
 }
 

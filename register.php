@@ -18,7 +18,7 @@
 			  activatielink in uw mailbox van het opgegeven emailadres.<br>
 			  Na het activeren van uw account kunt u inloggen met een<br>
 			  zelfgekozen wachtwoord";
-			  //header("refresh:5;url=index.php?content=login_form");
+			  header("refresh:5;url=index.php?content=login_form");
 		
 	}
 	/*
