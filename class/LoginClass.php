@@ -197,6 +197,7 @@
 			
 			UserClass::insert_into_userClass($post_array, $id);
 			self::send_activation_email($post_array, $hash_from_tmp_password);
+			self::send_welcome_email($post_array);
 		}
 		
 		public static function send_activation_email($post_array, $password)
@@ -224,6 +225,29 @@
 			$message .= "Voor u kunt inloggen, moet uw account nog worden geactiveerd.<br>";
 			$message .= "Klik hiervoor op de onderstaande link<br><br>";
 			$message .= "<a href='http://localhost/2013-2014/Blok2/AM1A/fotosjaak-am1a/index.php?content=activation&email=".$post_array['email']."&password=".$password."'>activeer account</a><br><br>";
+			$message .= "Met vriendelijke groet,<br>";
+			$message .= "Sjaak de Vries<br>";
+			$message .= "Uw fotograaf";	
+			
+			$headers  = "From: info@fotosjaak.nl\r\n";
+			$headers .=	"Reply-To: info@fotosjaak.nl\r\n";
+			$headers .= "Cc: sjaak@fotosjaak.nl\r\n";
+			$headers .= "Bcc: admin@fotosjaak.nl\r\n";
+			$headers .= "X-mailer: PHP/".phpversion()."\r\n";
+			$headers .= "MIME-version: 1.0\r\n";
+			//$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
+			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+			mail($to, $subject, $message, $headers);
+		}
+public static function send_welcome_email($post_array)
+		{
+			$to = $post_array['email'];
+			$subject = "Bedankt voor uw registratie";
+			$message = "<p><u>Geachte heer/mevrouw <b>".
+					   $post_array['firstname']." ".
+					   $post_array['infix']." ".
+					   $post_array['surname']."</b></u></p>";
+			$message .= "Bedankt voor het registreren<br>";
 			$message .= "Met vriendelijke groet,<br>";
 			$message .= "Sjaak de Vries<br>";
 			$message .= "Uw fotograaf";	
